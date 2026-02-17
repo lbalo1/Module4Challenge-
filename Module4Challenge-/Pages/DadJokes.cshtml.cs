@@ -5,7 +5,6 @@ namespace Module4Challenge.Pages
 {
     public class DadJokesModel : PageModel
     {
-        // Array of 12 dad jokes
         public string[] AllJokes { get; set; } =
         {
             "I had a quiet game of tennis today. There was no racket.",
@@ -22,25 +21,19 @@ namespace Module4Challenge.Pages
             "Why do crabs never volunteer? Because they're shell-fish."
         };
 
-        // List to store the jokes currently displayed on the page
         public List<string> CurrentJokes { get; set; } = new List<string>();
 
-        // Show Jokes
         public int JokesToShow { get; set; } = 2;
 
-        
         public void OnGet()
         {
             LoadRandomJokes();
         }
 
-        // More Jokes button
         public void OnPost()
         {
             LoadRandomJokes();
         }
-
-        // Selects random jokes 
         private void LoadRandomJokes()
         {
             Random rnd = new Random();
@@ -51,7 +44,7 @@ namespace Module4Challenge.Pages
                 int index = rnd.Next(0, AllJokes.Length);
                 string joke = AllJokes[index];
 
-            
+                
                 if (!CurrentJokes.Contains(joke))
                 {
                     CurrentJokes.Add(joke);

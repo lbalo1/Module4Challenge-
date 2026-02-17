@@ -4,15 +4,19 @@
     ViewData["Title"] = "Dad Joke Generator";
 }
 
-<div class="container mt-4 text-center">
-    <h1 class="mb-4"> Dad Joke Generator </h1>
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Dad Joke Generator</h1>
+        <p class="lead text-muted">Get ready to groan! Here are some of the best dad jokes around.</p>
+    </div>
 
-    <div class="row justify-content-center">
+    <div class="row">
         @foreach (var joke in Model.CurrentJokes)
         {
-            <div class="col-md-6 mb-3">
-                <div class="card shadow">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-body">
+                        <h5 class="card-title text-primary">😄 Dad Joke</h5>
                         <p class="card-text">@joke</p>
                     </div>
                 </div>
@@ -20,9 +24,11 @@
         }
     </div>
 
-    <form method="post">
-        <button type="submit" class="btn btn-primary mt-3">
-            More Jokes
-        </button>
-    </form>
+    <div class="text-center mt-5 mb-5">
+        <form method="post">
+            <button type="submit" class="btn btn-primary btn-lg">
+                Get More Jokes
+            </button>
+        </form>
+    </div>
 </div>
